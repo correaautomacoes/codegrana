@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code & Grana - Soluções em Automação</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(to bottom right, #e6f0ff, #cce0ff);
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+
+  .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-image: radial-gradient(#cce0ff 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #003366;
+  animation: fadeIn 2s ease;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #003366;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  opacity: 0.85;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 60px;
+      color: #003366;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 51, 102, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      height: 250px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .btn-comprar,
+    .btn-primary {
+      background: #003366;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+    }
+
+    .btn-comprar:hover,
+    .btn-primary:hover {
+      background: #0055aa;
+      color: #fff;
+    }
+
+    .curso-n8n .input-group input {
+      max-width: 60px;
+    }
+
+    footer {
+      background-color: #d9ecff;
+      color: #003366;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .consultoria-icon {
+      color: #003366;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .consultoria-icon:hover {
+      color: #0055aa;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #003366;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.navbar {
+      background-color: #f0f8ff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary fs-4" href="#">Code & Grana</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold" href="#produtos">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold" href="#formulario">Solicitar Projeto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-semibold" href="#curso">Comunidade</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Espaço extra para compensar o navbar fixo -->
+<div style="height: 80px;"></div>
+
+  <!-- Hero -->
+<section class="hero text-center py-5 bg-light">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Ganhe Dinheiro com IA, Automações e Tecnologia</h1>
+    <p class="lead mt-3">
+      Aprenda no nosso canal do YouTube como automatizar tarefas, vender serviços com n8n, e usar inteligência artificial para criar soluções práticas que geram lucro.
+    </p>
+
+    <p class="mt-4 fs-5 fw-semibold">
+      Explore abaixo nossos pacotes prontos de fluxos, bots e sistemas que você pode usar, adaptar ou revender!
+    </p>
+
+    <a href="#produtos" class="btn btn-primary btn-lg mt-3">
+      Ver Produtos e Soluções
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Produtos -->
+<section class="container py-5" id="produtos">
+  <h2 class="section-title text-center mb-5">Nossos Produtos</h2>
+  <div class="row g-5">
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=Agendamento+com+N8N" class="card-img-top rounded" alt="Agendamentos com N8N" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">Agendamentos com N8N</h4>
+          <p class="card-text fs-6 text-muted">RAG, Supabase, FollowUp e mais. Pronto para usar!</p>
+          <span class="badge bg-primary mb-3">Fácil instalação</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 99,90</span> <span class="text-danger fw-bold">R$ 59,90</span></p>
+            <a href="formulario-compra.html?produto=Agendamentos%20com%20N8N" class="btn btn-success w-100"><i class="fa-solid fa-robot me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=Disparador+WhatsApp+Massivo" class="card-img-top rounded" alt="Disparador WhatsApp" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">Disparador WhatsApp Massivo</h4>
+          <p class="card-text fs-6 text-muted">Envio em massa com controle de fila e respostas automáticas.</p>
+          <span class="badge bg-warning text-dark mb-3">Alta Performance</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 149,90</span> <span class="text-danger fw-bold">R$ 89,90</span></p>
+            <a href="formulario-compra.html?produto=Disparador%20WhatsApp%20Massivo" class="btn btn-success w-100"><i class="fa-solid fa-paper-plane me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=Bot+de+Suporte+com+IA" class="card-img-top rounded" alt="Bot de Suporte com IA" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">Bot de Suporte com IA</h4>
+          <p class="card-text fs-6 text-muted">Atendimento com IA + base de dados personalizada.</p>
+          <span class="badge bg-info text-dark mb-3">OpenAI + N8N</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 199,90</span> <span class="text-danger fw-bold">R$ 129,90</span></p>
+            <a href="formulario-compra.html?produto=Bot%20de%20Suporte%20com%20IA" class="btn btn-success w-100"><i class="fa-solid fa-headset me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=CRM+Automatizado" class="card-img-top rounded" alt="CRM Automatizado" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">CRM Automatizado</h4>
+          <p class="card-text fs-6 text-muted">Gatilhos, lembretes, e-mail e WhatsApp em um só lugar.</p>
+          <span class="badge bg-success mb-3">Sistema Completo</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 249,90</span> <span class="text-danger fw-bold">R$ 159,90</span></p>
+            <a href="formulario-compra.html?produto=CRM%20Automatizado" class="btn btn-success w-100"><i class="fa-solid fa-briefcase me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=Extrator+de+Notícias+IA" class="card-img-top rounded" alt="Extrator de Notícias com IA" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">Extrator de Notícias com IA</h4>
+          <p class="card-text fs-6 text-muted">Busca inteligente de notícias e envio automático.</p>
+          <span class="badge bg-danger mb-3">IA + Automação</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 129,90</span> <span class="text-danger fw-bold">R$ 79,90</span></p>
+            <a href="formulario-compra.html?produto=Extrator%20de%20Notícias%20com%20IA" class="btn btn-success w-100"><i class="fa-solid fa-newspaper me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produto -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg p-3">
+        <img src="https://via.placeholder.com/600x350.png?text=Formulário+com+Banco+de+Dados" class="card-img-top rounded" alt="Formulário com Banco de Dados" />
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title fw-bold">Formulário com Banco de Dados</h4>
+          <p class="card-text fs-6 text-muted">Salve dados no Supabase e receba notificações automáticas.</p>
+          <span class="badge bg-secondary mb-3">Ideal para Leads</span>
+          <div class="mt-auto">
+            <p class="fs-5"><span class="text-muted text-decoration-line-through">R$ 89,90</span> <span class="text-danger fw-bold">R$ 49,90</span></p>
+            <a href="formulario-compra.html?produto=Formulário%20com%20Banco%20de%20Dados" class="btn btn-success w-100"><i class="fa-solid fa-database me-2"></i>Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Comunidade -->
+<section class="comunidade container py-5" id="curso">
+  <div class="row align-items-center g-5">
+    <div class="col-lg-6">
+      <img 
+        src="https://via.placeholder.com/600x400.png?text=Curso+N8N+e+IA" 
+        alt="Curso de Automação com IA e N8N" 
+        class="img-fluid rounded-4 shadow-lg w-100"
+      />
+    </div>
+    <div class="col-lg-6">
+      <span class="text-uppercase fw-semibold text-primary mb-2 d-inline-block">Code & Grana</span>
+      <h2 class="fw-bold mb-3">Comunidade Code & Grana</h2>
+      <p class="mb-3 text-muted fs-5">
+        Aprenda a automatizar com N8N, dominar IA e construir soluções lucrativas. Tenha acesso a códigos fonte, modelos prontos, mentorias em grupo e networking exclusivo.
+      </p>
+
+      <ul class="list-unstyled mb-4">
+        <li><i class="fa-solid fa-check text-success me-2"></i> Acesso a códigos fonte exclusivos</li>
+        <li><i class="fa-solid fa-check text-success me-2"></i> Reuniões semanais em grupo</li>
+        <li><i class="fa-solid fa-check text-success me-2"></i> Suporte para dúvidas e projetos</li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <span class="text-decoration-line-through text-muted fs-5">R$ 997,99</span>
+        <span class="text-danger fs-4 fw-bold">R$ 577,99</span>
+        <span class="badge bg-danger text-uppercase">1 Ano de Acesso</span>
+      </div>
+
+      <a 
+        href="https://wa.me/seunumero?text=Tenho%20interesse%20no%20curso%20de%20automação%20com%20N8N" 
+        target="_blank" 
+        class="btn btn-success btn-lg d-inline-flex align-items-center"
+      >
+        <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Entrar para a Comunidade
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="container min-vh-100 d-flex align-items-center justify-content-center py-5" id="formulario">
+  <div class="w-100" style="max-width: 700px;">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Solicite um Projeto Personalizado</h2>
+      <p class="text-muted">Descreva sua ideia e entraremos em contato para transformar em realidade</p>
+    </div>
+
+    <form 
+      class="bg-white shadow-lg rounded-4 p-4 p-md-5 mx-auto"
+      id="formProjeto"
+      method="POST"
+      enctype="multipart/form-data"
+      action="https://SEU_WEBHOOK_URL">
+
+  <div class="mb-4">
+    <label for="nome" class="form-label fw-semibold">
+      <i class="fa-solid fa-user me-2 text-primary"></i>Seu nome
+    </label>
+    <input type="text" name="nome" class="form-control form-control-lg rounded-3" id="nome" placeholder="Digite seu nome completo" required>
+  </div>
+
+  <div class="mb-4">
+    <label for="email" class="form-label fw-semibold">
+      <i class="fa-solid fa-envelope me-2 text-primary"></i>Seu e-mail
+    </label>
+    <input type="email" name="email" class="form-control form-control-lg rounded-3" id="email" placeholder="Digite seu melhor e-mail" required>
+  </div>
+
+  <div class="mb-4">
+    <label for="detalhes" class="form-label fw-semibold">
+      <i class="fa-solid fa-comment-dots me-2 text-primary"></i>Descreva o que você precisa
+    </label>
+    <textarea name="detalhes" class="form-control form-control-lg rounded-3" id="detalhes" rows="5" placeholder="Conte o máximo possível sobre o projeto..."></textarea>
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label fw-semibold">
+      <i class="fa-solid fa-microphone me-2 text-primary"></i>Ou grave um áudio (opcional)
+    </label>
+    <div class="d-flex gap-2 align-items-center">
+      <button type="button" class="btn btn-outline-primary" id="recordBtn"><i class="fa-solid fa-circle me-2"></i>Gravar</button>
+      <audio id="audioPreview" controls class="d-none"></audio>
+    </div>
+  </div>
+
+  <!-- Aqui será inserido dinamicamente o input hidden com o áudio -->
+
+  <div class="d-grid">
+    <button type="submit" class="btn btn-primary btn-lg">
+      <i class="fa-solid fa-paper-plane me-2"></i>Enviar solicitação
+    </button>
+  </div>
+</form>
+
+
+
+<!-- Rodapé -->
+<footer class="w-100 bg-white text-center border-top py-3 mt-5 shadow-sm">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <small class="text-muted mb-2 mb-md-0">&copy; 2025 Code & Grana. Todos os direitos reservados.</small>
+      
+      <div class="d-flex gap-3">
+        <a href="#" class="text-muted fs-5"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-muted fs-5"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-muted fs-5"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/seunumero" target="_blank" class="whatsapp-float btn btn-success rounded-circle shadow position-fixed" style="bottom: 20px; right: 20px; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; z-index: 999;">
+  <i class="fab fa-whatsapp fs-4"></i>
+</a>
+
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/seunumero" target="_blank" class="whatsapp-float btn btn-success rounded-circle shadow-lg position-fixed" style="bottom: 20px; right: 20px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 999;">
+  <i class="fab fa-whatsapp fs-3"></i>
+</a>
+
